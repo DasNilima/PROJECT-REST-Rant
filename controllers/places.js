@@ -21,5 +21,11 @@ app.get('/', (req, res) => {
             res.render('places/index', { places })
 })
 
+// GET /places/new route
+
+app.get('/new', (req, res) => {
+    res.render('places/new')
+})
+
 
 module.exports = app
