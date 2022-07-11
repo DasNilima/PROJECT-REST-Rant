@@ -22,10 +22,14 @@ app.get('/', (req, res) => {
 })
 
 // GET /places/new route
-
 app.get('/new', (req, res) => {
     res.render('places/new')
 })
 
+// POST /places route
+app.post('/', (req, res) => {
+    console.log(req.body)
+    res.send('POST /places')
+})
 
 module.exports = app
