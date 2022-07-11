@@ -5,8 +5,11 @@ const express = require('express')
 //Initialized the app object
 const app = express()
 
+//Express Setting
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
 //import the router that created in places.js
 app.use('/places', require('./controllers/places'))
