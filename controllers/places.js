@@ -28,6 +28,19 @@ app.post('/', (req, res) => {
         places.push(req.body)
         res.redirect('/places')
     })
-    
 
+// show route
+app.get('/:id', (req, res) => {
+        let id = Number(req.params.id)
+        if (isNaN(id)) {
+            res.render('error404')
+        }
+        else if (!places[id]) {
+            res.render('error404')
+        }
+        else {
+            res.render('places/show', { place: places[id] })
+        }
+        })
+        
 module.exports = app
