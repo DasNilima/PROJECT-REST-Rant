@@ -1,5 +1,5 @@
 const React = require('react')
-const Def = require('../default')
+const Def = require('../default.jsx')
 
 //  Create a return statement in the new_form() function and then use the Def component as a wrapper
 function new_form () {

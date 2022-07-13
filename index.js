@@ -4,13 +4,15 @@ require('dotenv').config()
 const express = require('express')
 //Initialized the app object
 const app = express()
+const methodOverride = require('method-override')
 
-//Express Setting
+// Express Settings
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
 app.use(express.static('public'))
 app.use(express.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 //import the router that created in places.js
 app.use('/places', require('./controllers/places'))
@@ -24,7 +26,6 @@ app.get('/', (req, res) => {
 app.get('*', (req, res) => {
     res.render('error404')
 })
-
 
 // listen to a port number defined by a local environment variable
 app.listen(process.env.PORT)
