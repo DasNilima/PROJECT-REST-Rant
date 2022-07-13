@@ -3,13 +3,14 @@
 REST-Rant is an app where users can review restaurants.
 
 # Project setup
-- npm install
 - npm init -y
 - npm i -g nodemon / sudo npm i -g nodemon (Mac)
 
 # Installation
 - npm i express
 - npm i dotenv
+- npm i react express-react-views
+- npm i method-override
 
 ## Routes
 | Method | Path | Purpose |
