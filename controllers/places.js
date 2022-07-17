@@ -60,9 +60,9 @@ app.get('/:id/edit', (req, res) => {
 })
 // put route //update
 app.put('/:id', (req, res) => {
-    console.log("PUT endpoint hit")
+    //console.log("PUT endpoint hit")
     let id = Number(req.params.id)
-    console.log("PUT ID - ", id)
+    //console.log("PUT ID - ", id)
     if (isNaN(id)) {
         res.render('error404')
     }
