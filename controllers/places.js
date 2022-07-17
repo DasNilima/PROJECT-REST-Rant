@@ -12,6 +12,19 @@ app.get('/', (req, res) => {
 app.get('/new', (req, res) => {
     res.render('places/new')
 })
+// show route
+app.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+    res.render('error404')
+}
+else if (!places[id]) {
+    res.render('error404')
+}
+else {
+    res.render('places/show', { place: places[id], id })
+}
+})
 // POST /places route
 app.post('/', (req, res) => {
     if (!req.body.pic) {
@@ -27,20 +40,7 @@ app.post('/', (req, res) => {
         places.push(req.body)
         res.redirect('/places')
 })
-// delete route
-app.delete('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
-    res.render('error404')
-}
-    else if (!places[id]) {
-    res.render('error404')
-}
-    else {
-    places.splice(id, 1)
-    res.redirect('/places')
-}
-})
+
 //edit route
 app.get('/:id/edit', (req, res) => {
     let id = Number(req.params.id)
@@ -51,12 +51,18 @@ app.get('/:id/edit', (req, res) => {
         res.render('error404')
     }
     else {
-        res.render('places/edit', { place: places[id] })
+        let data = {
+            place: places[id],
+            id: id
+        }
+        res.render('places/edit', data)
     }
 })
 // put route //update
 app.put('/:id', (req, res) => {
+    console.log("PUT endpoint hit")
     let id = Number(req.params.id)
+    console.log("PUT ID - ", id)
     if (isNaN(id)) {
         res.render('error404')
     }
@@ -78,21 +84,21 @@ app.put('/:id', (req, res) => {
 
         // Save the new data into places[id]
         places[id] = req.body
-        res.redirect(`/places/${data.id}`)
+        res.redirect(`/places/${req.params.id}`)
 }
 })
 
-// show route
-app.get('/:id', (req, res) => {
-    let id = Number(req.params.id)
-    if (isNaN(id)) {
+app.delete('/:id', (req, res) => {
+let id = Number(req.params.id)
+if (isNaN(id)) {
     res.render('error404')
 }
 else if (!places[id]) {
     res.render('error404')
 }
 else {
-    res.render('places/show', { place: places[id], id })
+    places.splice(id, 1)
+    res.redirect('/places')
 }
 })
 

@@ -43,3 +43,10 @@ nav a:hover {
   color: pink;
   text-decoration: none;
 }
+.footer {
+  flex-shrink: 0;
+  padding: 20px;
+  grid-row-start: 2;
+  grid-row-end: 3;
+
+}
