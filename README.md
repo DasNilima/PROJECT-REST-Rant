@@ -11,6 +11,7 @@ REST-Rant is an app where users can review restaurants.
 - npm i dotenv
 - npm i react express-react-views
 - npm i method-override
+- npm i mongoose
 
 ## Routes
 | Method | Path | Purpose |
