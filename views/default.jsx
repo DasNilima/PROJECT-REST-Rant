@@ -8,7 +8,8 @@ function Def (html) {
         <html>
             <head>
                 <title>Title</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                 <link rel= "stylesheet" href= "/css/style.css"></link>
             </head>
             <body>
