@@ -11,12 +11,6 @@ async function seed() {
         rant: false,
         stars: 5.0,
         content: 'Wow, simply amazing! Highly recommended!'
-    },{
-        author: 'Starvin Marvin',
-        rant: false,
-        stars: 2.5,
-        content: 'Nice enough coffee,but I was really hoping for some grub.'
-        
     })
 
     // Add that comment to the place's comment array.
